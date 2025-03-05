@@ -26,6 +26,7 @@ test.describe("Successful user checkout & order", () => {
       TEST_CUSTOMER_DETAILS.TEST_POSTAL_CODE,
     );
     await checkoutCustomerInfo.clickButton(checkoutCustomerInfo.continueButton);
+    await checkoutCustomerInfo.checkItemCount(3)
     await checkoutOverview.clickButton(checkoutOverview.finishCheckoutButton);
     await checkoutComplete.checkElementIsVisible(
       checkoutComplete.checkoutCompleteText,
