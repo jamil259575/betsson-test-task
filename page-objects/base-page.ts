@@ -11,6 +11,7 @@ export abstract class BasePage {
   readonly inventoryQuantityLabel: Locator;
   readonly inventoryDescriptionLabel: Locator;
   readonly shoppingCartItemCount: Locator;
+  readonly errorMessage: Locator;
 
   protected constructor(page: Page) {
     this.page = page;
@@ -21,6 +22,7 @@ export abstract class BasePage {
     this.inventoryQuantityLabel = page.getByTestId("cart-quantity-label");
     this.inventoryDescriptionLabel = page.getByTestId("cart-desc-label");
     this.shoppingCartItemCount = page.getByTestId("shopping-cart-badge");
+    this.errorMessage = page.getByTestId("error")
   }
 
   public async open(directUrl = this.url): Promise<void> {

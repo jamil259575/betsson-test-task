@@ -4,14 +4,14 @@ import { TEST_CUSTOMER_DETAILS } from "../../../../constants/test-accounts/test-
 
 test.describe("Successful user checkout & order", () => {
   test("when user adds items to the cart, it should be able to checkout and order successfully", async ({
-    shoppingPage,
+    productPage,
     shoppingCartOverView,
     checkoutCustomerInfo,
     checkoutOverview,
     checkoutComplete,
   }) => {
-    await shoppingPage.addItemToCart([items.T_SHIRT,items.BACKPACK,items.BIKE_LIGHT]);
-    await shoppingPage.clickButton(shoppingPage.shoppingCartLink);
+    await productPage.addItemToCart([items.T_SHIRT,items.BACKPACK,items.BIKE_LIGHT]);
+    await productPage.clickButton(productPage.shoppingCartLink);
     await shoppingCartOverView.clickButton(shoppingCartOverView.checkoutButton);
     await checkoutCustomerInfo.fillElement(
       checkoutCustomerInfo.customerFirstName,

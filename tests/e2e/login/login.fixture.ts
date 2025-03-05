@@ -1,10 +1,10 @@
 import { test as baseTest } from "@playwright/test";
 import { LoginPage } from "../../../page-objects/login/login-page";
-import { ShoppingPage } from "../../../page-objects/shopping/shopping-page";
+import { ProductPage } from "../../../page-objects/shopping/product-page";
 
 type CombinedFixtures = {
   loginPage: LoginPage;
-  shoppingPage: ShoppingPage;
+  productPage: ProductPage;
 };
 export const test = baseTest.extend<CombinedFixtures>({
   loginPage: async ({ page }, use) => {
@@ -13,8 +13,8 @@ export const test = baseTest.extend<CombinedFixtures>({
     await use(loginPage);
   },
 
-  shoppingPage: async ({ page }, use) => {
-    const shoppingPage = new ShoppingPage(page);
-    await use(shoppingPage);
+  productPage: async ({ page }, use) => {
+    const productPage = new ProductPage(page);
+    await use(productPage);
   },
 });

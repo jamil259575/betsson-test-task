@@ -4,7 +4,7 @@ import { testCredentials } from "../../../constants/test-accounts/test-accounts"
 test.describe("Login page tests", () => {
   test("when user adds valid credentials, it should be able to login", async ({
     loginPage,
-    shoppingPage,
+    productPage,
   }) => {
     await loginPage.fillElement(
       loginPage.username,
@@ -15,10 +15,10 @@ test.describe("Login page tests", () => {
       testCredentials.STANDARD_PASSWORD,
     );
     await loginPage.clickButton(loginPage.loginButton);
-    await shoppingPage.checkElementIsVisible(shoppingPage.inventoryList);
-    await shoppingPage.checkElementIsVisible(shoppingPage.openMenuButton);
-    await shoppingPage.checkElementIsVisible(shoppingPage.sortProductContainer);
-    await shoppingPage.checkElementIsVisible(shoppingPage.shoppingCartLink);
+    await productPage.checkElementIsVisible(productPage.inventoryList);
+    await productPage.checkElementIsVisible(productPage.openMenuButton);
+    await productPage.checkElementIsVisible(productPage.sortProductContainer);
+    await productPage.checkElementIsVisible(productPage.shoppingCartLink);
   });
 
   test("when user adds credentials for blocked user, it should see error message", async ({

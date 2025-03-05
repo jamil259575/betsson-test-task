@@ -1,6 +1,6 @@
 import { test as baseTest } from "@playwright/test";
 import { LoginPage } from "../../../page-objects/login/login-page";
-import { ShoppingPage } from "../../../page-objects/shopping/shopping-page";
+import { ProductPage } from "../../../page-objects/shopping/product-page";
 import { testCredentials } from "../../../constants/test-accounts/test-accounts";
 import { ShoppingCartOverviewPage } from "../../../page-objects/shopping-cart/shopping-cart-overview-page";
 import { CheckoutCustomerInfoPage } from "../../../page-objects/checkout/checkout-customer-info-page";
@@ -8,14 +8,14 @@ import { CheckoutOverviewPage } from "../../../page-objects/checkout/checkout-ov
 import { CheckoutCompletePage } from "../../../page-objects/checkout/checkout-complete-page";
 
 type CombinedFixtures = {
-  shoppingPage: ShoppingPage;
+  productPage: ProductPage;
   shoppingCartOverView: ShoppingCartOverviewPage;
   checkoutCustomerInfo: CheckoutCustomerInfoPage;
   checkoutOverview: CheckoutOverviewPage;
   checkoutComplete: CheckoutCompletePage;
 };
 export const test = baseTest.extend<CombinedFixtures>({
-  shoppingPage: async ({ page }, use) => {
+  productPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
     await loginPage.open();
     await loginPage.fillElement(
@@ -27,8 +27,8 @@ export const test = baseTest.extend<CombinedFixtures>({
         testCredentials.STANDARD_PASSWORD,
     );
     await loginPage.clickButton(loginPage.loginButton);
-    const shoppingPage = new ShoppingPage(page);
-    await use(shoppingPage);
+    const productPage = new ProductPage(page);
+    await use(productPage);
   },
 
   shoppingCartOverView: async ({ page }, use) => {
