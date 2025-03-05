@@ -1,6 +1,6 @@
 import { test as baseTest } from "@playwright/test";
 import { LoginPage } from "../../../page-objects/login/login-page";
-import { ProductPage } from "../../../page-objects/shopping/product-page";
+import { ProductPage } from "../../../page-objects/products/product-page";
 
 type CombinedFixtures = {
   loginPage: LoginPage;

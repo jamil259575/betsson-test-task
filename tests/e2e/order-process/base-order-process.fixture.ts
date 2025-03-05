@@ -1,6 +1,6 @@
 import { test as baseTest } from "@playwright/test";
 import { LoginPage } from "../../../page-objects/login/login-page";
-import { ProductPage } from "../../../page-objects/shopping/product-page";
+import { ProductPage } from "../../../page-objects/products/product-page";
 import { testCredentials } from "../../../constants/test-accounts/test-accounts";
 import { ShoppingCartOverviewPage } from "../../../page-objects/shopping-cart/shopping-cart-overview-page";
 import { CheckoutCustomerInfoPage } from "../../../page-objects/checkout/checkout-customer-info-page";
