@@ -1,0 +1,1 @@
+export const TIMEOUT_WAIT_FOR_ELEMENT:number = 3000
