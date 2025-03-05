@@ -2,6 +2,14 @@ import { test } from "./login.fixture";
 import { testCredentials } from "../../../constants/test-accounts/test-accounts";
 
 test.describe("Login page tests", () => {
+
+  test("when user visits login page, fields should be empty", async ({
+    loginPage,
+  }) => {
+    await loginPage.checkInputIsEmpty(loginPage.username);
+    await loginPage.checkInputIsEmpty(loginPage.password);
+  });
+
   test("when user adds valid credentials, it should be able to login", async ({
     loginPage,
     productPage,
